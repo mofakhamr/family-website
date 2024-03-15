@@ -7,23 +7,31 @@ import React, { useState } from "react";
 // Define the Header component
 export default function Header() {
   const [isMenuOpen, toggleNav] = React.useState(false);
-  const [isUserOpen, toggleUserNav] = React.useState(false);
+  const [isSecondOpen, toggleSecondNav] = React.useState(false);
 
   function handleMenuClick() {
     toggleNav(!isMenuOpen);
     console.log(isMenuOpen);
   }
-  function handleUserClick() {
-    toggleUserNav(!isUserOpen);
-    console.log(isUserOpen);
+  function handleSecondNav() {
+    toggleSecondNav(!isSecondOpen);
+    console.log(isSecondOpen);
   }
 
   const mainMenu = [
-    {name: "Family Tree", path: "family-tree"},
-    {name: "Notable Individuals", path: "notable"},
-    {name: "Mausoleum", path: "mausoleum"},
-    {name: "Photographs", path: "photographs"},
-    {name: "Contact", path: "contact"},
+    { name: "Family Tree", path: "/family-tree" },
+    {
+      name: "Notable Individuals", path: "#", children: [
+        { name: "Jabbar TASKRECHI", path: "/notable/jabbar" },
+        { name: "Eshagh MOFAKHAM", path: "/notable/eshagh" },
+      ]
+    },
+    { name: "Mausoleum", path: "/mausoleum" },
+    { name: "Photographs", path: "/photographs" },
+    { name: "Contact", path: "/contact", children: [
+      { name: "Jabbar TASKRECHI", path: "/notable/jabbar" },
+      { name: "Eshagh MOFAKHAM", path: "/notable/eshagh" },
+    ] },
   ]
 
   return (
@@ -59,10 +67,26 @@ export default function Header() {
         {/*<!-- Primary Nav -->*/}
         <nav className={`px-2 pt-2 pb-4 sm:mr-20 sm:flex sm:p-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
           <div className="sm:flex">
-            <a href="/" className='block px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200'>Home</a>
+            <div>
+              <a key="nmx" href="/" className='block px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200'>Home</a>
+            </div>
+
             {mainMenu.map((item, i) => {
-              console.log("Entered", item);
-              return <a href={item.path} className='block mt-1 sm:block px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200 sm:mt-0 sm:ml-2'>{item.name}</a>;
+              let hasChildren:JSX.Element | undefined;
+              const children = (item.children) && item.children.map((child, si) => {
+                hasChildren = <i className="arrow adown"></i>;
+                return <div key={i + si} className="block ml-4 mt-1"><a href={child.path} className=''>{child.name}</a></div>;
+              })
+
+              return <div key={i}>
+                <a href={item.path}
+                onClick={hasChildren && handleSecondNav}
+                className='block mt-1 px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200 sm:mt-0 sm:ml-2'>
+                  {item.name}
+                  {hasChildren && hasChildren}
+                </a>
+                <div className={isSecondOpen ? 'block' : 'hidden'}>{children}</div>
+              </div>;
             })}
           </div>
         </nav>
