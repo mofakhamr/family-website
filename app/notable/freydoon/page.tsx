@@ -31,7 +31,7 @@ export default function Home() {
             to Iran at the age of eighteen to do his military service for a period of two years. He remained there till 1950.
             He married Shahnaz Khadjeh-Nouri and their daughter, Safinaz, was born in 1956. He later married Claude Bunaudière
             and they had three daughters, Caroline, Michelle and Cecilia. </p>
-          <div className='container mx-auto'>
+        <div className='container mx-auto'>
             <Zoom>
               <Image
                 src="/family/irandokht_freidoon.jpg"
