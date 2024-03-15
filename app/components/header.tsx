@@ -28,6 +28,7 @@ export default function Header() {
       name: "Notable Individuals", path: "#", children: [
         { name: "Jabbar TASKRECHI", path: "/notable/jabbar" },
         { name: "Eshagh MOFAKHAM", path: "/notable/eshagh" },
+        { name: "Mahmoud MOFAKHAM", path: "/notable/mahmoud" },
       ]
     },
     { name: "Mausoleum", path: "/mausoleum" },
@@ -36,7 +37,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 bg-black sm:flex sm:justify-between sm:items-center bg-[url('/repeatbg.png')] bg-repeat-x">
+    <header className="z-10 sticky top-0 bg-black sm:flex sm:justify-between sm:items-center bg-[url('/repeatbg.png')] bg-repeat-x">
 
       {/*<!-- mobile button and logo -->*/}
       <div className="flex items-center justify-between p-0">
