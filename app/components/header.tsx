@@ -29,6 +29,7 @@ export default function Header() {
         { name: "Jabbar TASKRECHI", path: "/notable/jabbar" },
         { name: "Eshagh MOFAKHAM", path: "/notable/eshagh" },
         { name: "Mahmoud MOFAKHAM", path: "/notable/mahmoud" },
+        { name: "Masood MOFAKHAM", path: "/notable/masood" },
       ]
     },
     { name: "Mausoleum", path: "/mausoleum" },
