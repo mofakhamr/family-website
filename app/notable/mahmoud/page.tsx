@@ -236,8 +236,8 @@ export default function Home() {
             of Leopold on his return to Belgium. We still remember His Excellence Mahmoud Khan. We sincerely and deeply
             regret his parting. Translated by: Kind Freind Karin Tearle.</p>
 
-          <h2><a href="/embassy">Embassy in Bruxells</a></h2>
-          <a href="/embassy" className='text-blue-500'>Read more about the Embassy</a>
+          <h2><a href="/notable/embassy">Embassy in Bruxells</a></h2>
+          <a href="/notable/embassy" className='text-blue-500'>Read more about the Embassy</a>
           <p>For his services to the King (Kajar) and Country he received :</p>
 
           <table className='min-w-full text-center text-sm font-light text-surface dark:text-white'>
@@ -251,7 +251,7 @@ export default function Home() {
             </thead>
             <tbody>
               <tr className='border-b border-neutral-200 dark:border-white/10 '>
-                <td><div className='container mx-auto   -2'>
+                <td><div className='container mx-auto'>
                   <Zoom>
                     <Image
                       src={"/family/H0027-L03928519.jpg"}

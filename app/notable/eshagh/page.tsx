@@ -97,9 +97,9 @@ export default function Home() {
           <table className='min-w-full text-center text-sm font-light text-surface dark:text-white'>
             <thead className='border-b border-neutral-200 bg-[#332D2D] font-medium text-white dark:border-white/10'>
               <tr className=''>
-                <th scope="col" class=" px-6 py-4">Country</th>
-                <th scope="col" class=" px-6 py-4">Office</th>
-                <th scope="col" class=" px-6 py-4">Date</th>
+                <th scope="col" className=" px-6 py-4">Country</th>
+                <th scope="col" className=" px-6 py-4">Office</th>
+                <th scope="col" className=" px-6 py-4">Date</th>
               </tr>
             </thead>
             <tbody>

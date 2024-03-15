@@ -26,11 +26,15 @@ export default function Header() {
     { name: "Family Tree", path: "/family-tree" },
     {
       name: "Notable Individuals", path: "#", children: [
+        { name: "Introduction", path: "/notable" },
         { name: "Jabbar TASKRECHI", path: "/notable/jabbar" },
         { name: "Eshagh MOFAKHAM", path: "/notable/eshagh" },
         { name: "Mahmoud MOFAKHAM", path: "/notable/mahmoud" },
         { name: "Masood MOFAKHAM", path: "/notable/masood" },
         { name: "Mohsen MOFAKHAM", path: "/notable/mohsen" },
+        { name: "Mirza Agha FARSHI", path: "/notable/farshi" },
+        { name: "Fereydoun SAHEBJAM", path: "/notable/freydoon" },
+        { name: "Embassy", path: "/notable/embassy" },
       ]
     },
     { name: "Mausoleum", path: "/mausoleum" },
@@ -89,7 +93,8 @@ export default function Header() {
                   {item.name}
                   {hasChildren && hasChildren}
                 </a>
-                <div className={openMenus[menuId.toString()] ? 'sm:fixed block bg-gray-500 ml-2 p-2' : 'hidden'}>{children}</div>
+                {hasChildren && <div className={openMenus[menuId.toString()] ? 'sm:fixed block bg-gray-500 ml-2 p-2' : 'hidden'}>{children}</div>}
+                
               </div>;
             })}
           </div>
