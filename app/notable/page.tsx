@@ -1,3 +1,6 @@
+export const metadata: Metadata = {
+  title: "Notable Individuals",
+}
 
 export default function Home() {
 

@@ -1,3 +1,6 @@
+export const metadata: Metadata = {
+  title: "Family Tree",
+}
 
 export default function Home() {
 
@@ -29,9 +32,9 @@ export default function Home() {
           </p>
           <p><a className="m-5 font-mono" href="/tree.pdf" target="_blank">Download Family Tree</a></p>
           <div className="h-screen">
-              <object className="h-5/6" data="/tree.pdf" type="application/pdf" width="100%">
-                <p>Unable to display PDF file. <a href="/tree.pdf">Download</a> instead.</p>
-              </object>
+            <object className="h-5/6" data="/tree.pdf" type="application/pdf" width="100%">
+              <p>Unable to display PDF file. <a href="/tree.pdf">Download</a> instead.</p>
+            </object>
           </div>
         </div>
       </div>

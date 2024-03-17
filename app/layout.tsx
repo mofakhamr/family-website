@@ -11,16 +11,14 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Sitename',
-    default: "Sample Site",
+    template: '%s | Mofakham Family Website',
+    default: "Mofakham Family Website",
   },
-  description: "The best place for the best things",
-  generator: 'Next.js',
-  applicationName: 'Next.js',
+  description: "Some history and information on the Family Mofakham",
   referrer: 'origin-when-cross-origin',
   keywords: ['Next.js', 'React', 'JavaScript'],
-  authors: [{ name: 'Robin', url: 'https://nextjs.org' }],
-  creator: 'Robin',
+  authors: [{ name: 'Robin M', url: 'https://nextjs.org' }],
+  creator: 'Mahmoud Mofakham',
   publisher: 'Robin',
   formatDetection: {
     email: false,
