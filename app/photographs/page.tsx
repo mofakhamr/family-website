@@ -40,8 +40,7 @@ export default function Home() {
 
         <div className="md:grid md:gap-12 md:grid-cols-5 lg:grid-cols-5 mx-12 mb-2">
           {galleryPhotos.map((item, i) => {
-            console.log(item);
-            return <div>
+            return <div key={i}>
                 <ImageZoom
                   src={item.src}
                   width={400}
