@@ -1,9 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
-
+import ImageZoom from '@/components/imagezoom'
 
 export default function Home() {
 
@@ -28,38 +23,33 @@ export default function Home() {
 
         <h2>Entrance</h2>
         <div className='container mx-auto'>
-          <Zoom>
-            <Image
+            <ImageZoom
               src="/mausoleum/mausoleum-entrance.jpg"
               width={400}
               height={200}
               alt="Mausoleum Entrance"
               className="w-1/2 sm:w-1/4 mx-auto"
-            /></Zoom>
+            />
           <p>Mausoleum Entrance</p>
-          <Zoom>
-            <Image
+            <ImageZoom
               src="/mausoleum/mausoleum-main-chamber.jpg"
               width={400}
               height={200}
               alt="Mausoleum main chamber"
               className="w-1/2 sm:w-1/4 mx-auto"
-            /></Zoom>
+            />
           <p>Mausoleum main chamber</p>
         </div>
         <h2>Some of the family buried in the mausoleum</h2>
         <div className="grid gap-4 md:gap-12 grid-cols-3 md:grid-cols-6 lg:grid-cols-6 mx-12 mb-2">
           {galleryPhotos.map((item, i) => {
-            console.log(item);
-            return <div>
-              <Zoom>
-                <Image
+            return <div key={i}>
+                <ImageZoom
                   src={item.src}
                   width={400}
                   height={200}
                   alt={item.alt}
-                  
-                /></Zoom>
+                  />
               <p className='text-center'>{item.alt}</p>
             </div>;
           })

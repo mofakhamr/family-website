@@ -1,8 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import ImageZoom from '@/components/imagezoom'
 
 
 export default function Home() {
@@ -12,15 +8,14 @@ export default function Home() {
       <div className="sm:max-w-5xl text-center">
         <h1 className="">Eshagh Mofakam</h1>
         <div className='container mx-auto'>
-          <Zoom>
-            <Image
+          <ImageZoom
               src="/family/eshag-1926.jpg"
               width={400}
               height={200}
               alt='Portrait of Eshagh Mofakam'
               className="w-1/2 sm:w-1/4 mx-auto"
 
-            /></Zoom>
+            />
         </div>
         <h2>"Mofakham Doleh"</h2>
         <div className="text-left">
@@ -36,15 +31,14 @@ export default function Home() {
             (1886 - 1969). They had two sons and one daughter.
           </p>
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/esh_wife.jpg"}
                 alt="Portrait of Eshagh and his wife"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p>Parveez (1907 - 1945) was born and educated in Switzerland and  married a Swiss girl. He contracted (TB) and due to
             this illness spent the last few years of his life in a sanitorium. He had two daughters.
@@ -69,15 +63,14 @@ export default function Home() {
 
           </p>
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src="/family/thebegin.jpg"
                 width={400}
                 height={200}
                 alt='Portrait of Eshagh Mofakam'
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
 
           <h2>Career</h2>
@@ -159,31 +152,28 @@ export default function Home() {
             of Honor - The medal was awarded on 14 August 1900 at the Iranian Embassy in Washington DC.
           </p>
           <div className='flex mx-auto justify-between'>
-            <Zoom>
-              <Image
+               <ImageZoom
                 src="/family/prince1.jpg"
                 width={400}
                 height={200}
                 alt='Medals'
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
-            <Zoom>
-              <Image
+              />
+              <ImageZoom
                 src="/family/scanlegiondehonour.jpg"
                 width={400}
                 height={200}
                 alt='Legion de Honour'
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
+              />
 
-            <Zoom>
-              <Image
+              <ImageZoom
                 src="/family/medals.jpg"
                 width={400}
                 height={200}
                 alt='Medals'
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
+              />
           </div>
 
           <h2>Commander of the Legion of Honor</h2>

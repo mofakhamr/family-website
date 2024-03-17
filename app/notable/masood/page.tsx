@@ -1,9 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
-
+import ImageZoom from '@/components/imagezoom'
 
 export default function Home() {
 
@@ -12,15 +7,13 @@ export default function Home() {
       <div className="sm:max-w-5xl text-center">
         <h1 className="">Masood Mofakham</h1>
         <div className='container mx-auto'>
-          <Zoom>
-            <Image
+          <ImageZoom
               src="/family/masood.png"
               width={400}
               height={200}
               alt='Portrait of Masood Mofakham'
               className="w-1/2 sm:w-1/4 mx-auto"
-
-            /></Zoom>
+            />
         </div>
         <h2>"Mofakham Soltan"</h2>
         <div className="text-left">
@@ -33,15 +26,14 @@ export default function Home() {
           <p>He died in February 1953 in Tehran and was buried in the family mausoleum.</p>
 
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/brothers.jpg"}
                 alt="Masood's brothers"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Masood's brothers</p>
 
@@ -69,29 +61,27 @@ export default function Home() {
           <p>&nbsp;</p>
           
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/mofakhams_old.jpg"}
                 alt="Mofakham old family"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Mofakham old family</p>
 
           <h2>The Family</h2>
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/masood-2sons.jpg"}
                 alt="Masood's two sons"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Masood's two sons</p>
 
@@ -104,15 +94,14 @@ export default function Home() {
             <h2>Accolades</h2>
             <p>In 1922 he received the Order of Couronne from the Belgium Foreign Ministry.</p>
             <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/ordre-couronne1.jpg "}
                 alt="Order de la Couronne"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Order de la Couronne</p>
           

@@ -1,8 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import ImageZoom from '@/components/imagezoom'
 
 
 export default function Home() {
@@ -12,13 +8,13 @@ export default function Home() {
       <div className="sm:max-w-5xl text-center">
         <h1 className="">Fereydoun Sahebjam</h1>
         <div className='container mx-auto'>
-            <Zoom><Image
-              src="/family/fred.jpg"
-              width={100}
-              height={100}
-              alt='Portrait of Fereydoun Sahebjam'
-              className="mx-auto"
-            /></Zoom>
+          <ImageZoom
+            src="/family/fred.jpg"
+            width={100}
+            height={100}
+            alt='Portrait of Fereydoun Sahebjam'
+            className="mx-auto"
+          />
         </div>
         <div className="text-left">
           <h2>Life</h2>
@@ -31,16 +27,15 @@ export default function Home() {
             to Iran at the age of eighteen to do his military service for a period of two years. He remained there till 1950.
             He married Shahnaz Khadjeh-Nouri and their daughter, Safinaz, was born in 1956. He later married Claude Bunaudière
             and they had three daughters, Caroline, Michelle and Cecilia. </p>
-        <div className='container mx-auto'>
-            <Zoom>
-              <Image
-                src="/family/irandokht_freidoon.jpg"
-                width={400}
-                height={200}
-                alt='Fereydoun and his Mother'
-                className="w-1/2 sm:w-1/4 mx-auto"
+          <div className='container mx-auto'>
+            <ImageZoom
+              src="/family/irandokht_freidoon.jpg"
+              width={400}
+              height={200}
+              alt='Fereydoun and his Mother'
+              className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+            />
           </div>
           <p className='text-center'>Fereydoun and his Mother</p>
 
@@ -61,9 +56,7 @@ export default function Home() {
             recognised and was translated into many languages. The novel was then produced in to film by the same name
             directed by Cyrus Nowrasteh in 2008 . Fereydoun published thousands of articles and thirteen books during
             his lifetime. He died at the age of 75 in March 2008 at his home in "Neuilly-sur-Seine".</p>
-
         </div>
-
 
       </div>
     </main >

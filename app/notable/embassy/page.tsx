@@ -1,9 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
-
+import ImageZoom from '@/components/imagezoom'
 
 export default function Home() {
 
@@ -35,15 +30,14 @@ export default function Home() {
         <div className="md:grid md:gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
           {galleryPhotos.map((item, i) => {
             console.log(item);
-            return <div>
-              <Zoom>
-                <Image
+            return <div key={i}>
+              <ImageZoom
                   src={item.src}
                   width={400}
                   height={200}
                   alt={item.alt}
                   className='h-fit'
-                /></Zoom>
+                />
               <p>{item.alt}</p>
             </div>;
           })

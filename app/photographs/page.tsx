@@ -1,8 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import ImageZoom from '@/components/imagezoom'
 
 
 export default function Home() {
@@ -46,14 +42,13 @@ export default function Home() {
           {galleryPhotos.map((item, i) => {
             console.log(item);
             return <div>
-              <Zoom>
-                <Image
+                <ImageZoom
                   src={item.src}
                   width={400}
                   height={200}
                   alt={item.alt}
                   
-                /></Zoom>
+                />
               <p className='text-center'>{item.alt}</p>
             </div>;
           })

@@ -1,8 +1,4 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import ImageZoom from '@/components/imagezoom'
 
 
 export default function Home() {
@@ -12,15 +8,14 @@ export default function Home() {
       <div className="sm:max-w-5xl text-center">
         <h1 className="">Mahmoud Mofakham</h1>
         <div className='container mx-auto'>
-          <Zoom>
-            <Image
+          <ImageZoom
               src="/family/mahmoud-mofakham.jpg"
               width={400}
               height={200}
               alt='Portrait of Mahmoud Mofakham'
               className="w-1/2 sm:w-1/4 mx-auto"
 
-            /></Zoom>
+            />
         </div>
         <h2>"Mohtasham Doleh"</h2>
         <div className="text-left">
@@ -35,15 +30,13 @@ export default function Home() {
             children.
           </p>
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+              <ImageZoom
                 src={"/family/rab_masood.jpg"}
                 alt="Portrait of Eshagh and his wife"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
-
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Rabieh Soltan & Masood</p>
           <p>He lost his wife to "Cholera" in 1906 - she died in Kermanshah and was buried in Najaf. Mohtasham-ed-dole died
@@ -127,15 +120,14 @@ export default function Home() {
 
 
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/office_e.jpg"}
                 alt="Embassador's Office in Bruxells."
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Embassador's Office in Bruxells.</p>
 
@@ -151,15 +143,14 @@ export default function Home() {
 
 
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/oilpainting.jpg"}
                 alt="Oil Painting."
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
 
-              /></Zoom>
+              />
           </div>
           <p>In a ceremony, in the presence of all the dignatories whose lives were one way or another affected by him and many
             Belgium VIPs, he was presented with a " Guest Book " and a large bronze plaque. It was commisioned by the ?"Commitee
@@ -167,22 +158,20 @@ export default function Home() {
             whereabouts of this plaque and would welcome any news, especially a photograph). However, at the time, there were
             some smaller replicas produced (of which I am the proud owner of one)</p>
           <div className='flex mx-auto justify-between'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/plaque.jpg"}
                 alt="Plaques"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
-            <Zoom>
-              <Image
+              />
+            <ImageZoom
                 src={"/family/plaque_back.jpg"}
                 alt="Plaques"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
+              />
           </div>
 
           <div className='items-center text-center'>
@@ -196,14 +185,13 @@ export default function Home() {
           <p>In 1909 he was invited to become a member of the "Cercle Royal du Parc ", which was a great honour.</p>
 
           <div className='container mx-auto'>
-            <Zoom>
-              <Image
+            <ImageZoom
                 src={"/family/magazine.jpg"}
                 alt="Magazine article -THE PERSIAN LEGATESHIP"
                 width={400}
                 height={200}
                 className="w-1/2 sm:w-1/4 mx-auto"
-              /></Zoom>
+              />
           </div>
           <p className='text-center'>Translation of the above magazine article into English.</p>
 
@@ -252,14 +240,13 @@ export default function Home() {
             <tbody>
               <tr className='border-b border-neutral-200 dark:border-white/10 '>
                 <td><div className='container mx-auto'>
-                  <Zoom>
-                    <Image
+                  <ImageZoom
                       src={"/family/H0027-L03928519.jpg"}
                       alt="The Qajar Order of Imperial Effigy."
                       width={400}
                       height={200}
                       className="w-1/2 sm:w-1/4 mx-auto"
-                    /></Zoom>
+                    />
                 </div></td>
                 <td>The Qajar Order of Imperial Effigy.	</td>
                 <td>Ahmad Shah Qajar	</td>
@@ -267,14 +254,13 @@ export default function Home() {
               </tr>
               <tr className='border-b border-neutral-200 dark:border-white/10'>
                 <td><div className='container mx-auto py-2'>
-                  <Zoom>
-                    <Image
+                  <ImageZoom
                       src={"/family/med-rib-leopold.jpg"}
                       alt="The Grand Cross in the Order of Leopold II.	"
                       width={400}
                       height={200}
                       className="w-1/2 sm:w-1/4 mx-auto"
-                    /></Zoom>
+                    />
                 </div></td>
                 <td>The Grand Cross in the Order of Leopold II.	</td>
                 <td>Albert 1st King of Belgium	</td>
@@ -282,14 +268,13 @@ export default function Home() {
               </tr>
               <tr className='border-b border-neutral-200 dark:border-white/10'>
                 <td><div className='container mx-auto py-2'>
-                  <Zoom>
-                    <Image
+                  <ImageZoom
                       src={"/family/P5030038.jpg"}
                       alt="The Grand Officer in the Order of Leopold."
                       width={400}
                       height={200}
                       className="w-1/2 sm:w-1/4 mx-auto"
-                    /></Zoom>
+                    />
                 </div></td>
                 <td>The Grand Officer in the Order of Leopold.	</td>
                 <td>Albert 1st King of Belgium	</td>
@@ -297,14 +282,13 @@ export default function Home() {
               </tr>
               <tr className='border-b border-neutral-200 dark:border-white/10'>
                 <td><div className='container mx-auto py-2'>
-                  <Zoom>
-                    <Image
+                  <ImageZoom
                       src={"/family/crown.jpg"}
                       alt="The Knight of the order of the Crown"
                       width={400}
                       height={200}
                       className="w-1/2 sm:w-1/4 mx-auto"
-                    /></Zoom>
+                    />
                 </div></td>
                 <td>The Knight of the order of the Crown	</td>
                 <td>Belgium Ministry of Foreign Affairs	</td>
