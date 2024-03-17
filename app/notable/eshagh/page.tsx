@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5 sm:py-8">
       <div className="sm:max-w-5xl text-center">
-        <h1 className="">Eshagh Mofakam</h1>
+        <h1 className="">Eshagh Mofakham</h1>
         <div className='container mx-auto'>
           <ImageZoom
               src="/family/eshag-1926.jpg"
