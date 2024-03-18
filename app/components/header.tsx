@@ -63,8 +63,9 @@ export default function Header() {
             width={166}
             height={80}
             priority
-          /></a>
+          /></a> 
         </div>
+        <div className="text-sm">Mofakham Family Website</div>
 
         <div className="sm:hidden">
           <button onClick={() => handleMenuItem('mobileNav')} type="button" className="mr-5 block text-black focus:text-black focus:outline-none hover:text-black">

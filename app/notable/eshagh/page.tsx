@@ -1,6 +1,5 @@
 import ImageZoom from '@/components/imagezoom'
 
-
 export default function Home() {
 
   return (

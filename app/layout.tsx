@@ -1,16 +1,20 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import Header from "./components/header";
+import Header from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 import Script from 'next/script'
 
 
+import { Suspense } from 'react';
+import GoogleAnalytics from '@/components/ga';
+
 export const metadata: Metadata = {
-  title: {
+  title: {  
     template: '%s | Mofakham Family Website',
     default: "Mofakham Family Website",
   },
@@ -27,13 +31,33 @@ export const metadata: Metadata = {
   },
 };
 
+// https://ravinduinduwara.medium.com/adding-google-analytics-to-a-react-typescript-next-js-application-5d114ed8b170
+const gtag = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics Measurement ID*/}
+        <Script async src={gtag} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname
+                });
+              `,
+            }}
+          />
+      </head>
       <body className={inter.className}>
       <Header />
 
@@ -41,12 +65,13 @@ export default function RootLayout({
         {/* Layout UI */}
         {children}
         {/*  strategy="afterInteractive"  */}
-        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1900426305141513"/>
         
         <div className="bg-gray-500 left-0 flex h-24 w-full items-end justify-center ">
-          footer
+          &nbsp;
         </div>
-
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         </body>
     </html>
   );
