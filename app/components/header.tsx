@@ -57,7 +57,7 @@ export default function Header() {
 
         <div>
           <a href="/" className='text-white'><Image
-            className="dark-invert text-white"
+            className="dark-invert text-white sm:fixed sm:top-0"
             src="/logo.png"
             alt="Site Logo"
             width={166}
@@ -65,7 +65,7 @@ export default function Header() {
             priority
           /></a> 
         </div>
-        <div className="text-sm">Mofakham Family Website</div>
+        <div className="text-sm relative sm:ml-40">Mofakham Family Website</div>
 
         <div className="sm:hidden">
           <button onClick={() => handleMenuItem('mobileNav')} type="button" className="mr-5 block text-black focus:text-black focus:outline-none hover:text-black">
@@ -79,12 +79,12 @@ export default function Header() {
       </div>
 
       {/*<!-- Main Nav -->*/}
-      <div className='text-white'>
+      <div className='text-white sm:text-xs/6'>
         {/*<!-- Primary Nav -->*/}
-        <nav className={`px-2 pt-2 pb-4 sm:mr-20 sm:flex sm:p-0 ${openMenus.mobileNav ? 'block' : 'hidden'}`}>
+        <nav className={` px-2 pt-2 pb-4 sm:mr-2 sm:flex sm:p-0 ${openMenus.mobileNav ? 'block' : 'hidden'}`}>
           <div className="sm:flex">
             <div>
-              <a key="nmx" href="/" className='block px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200'>Home</a>
+              <a key="nmx" href="/" className='block mt-1 sm:mt-16 px-2 py-1 text-white hover:text-black font-semibold rounded hover:bg-gray-200'>Home</a>
             </div>
 
             {mainMenu.map((item, i) => {
@@ -92,17 +92,17 @@ export default function Header() {
               let hasChildren: JSX.Element | undefined;
               const children = (item.children) && item.children.map((child, si) => {
                 hasChildren = <i className="arrow adown"></i>;
-                return <div key={i + si} className="block m-1 mt-1 p-1 sm:p-2 hover:bg-gray-100 hover:text-black rounded"><a href={child.path} className=''>{child.name}</a></div>;
+                return <div key={i + si} className="block m-1 mt-1 p-1 sm:p-1 hover:bg-gray-100 hover:text-black rounded"><a href={child.path} className=''>{child.name}</a></div>;
               })
               const menuId = i + 1;
               return <div key={i}>
                 <a href={item.path}
                   onClick={() => handleMenuItem(menuId.toString())}
-                  className='block mt-1 px-2 py-1 text-white sm:text-slate-700 hover:text-black font-semibold rounded hover:bg-gray-200 sm:mt-0 sm:ml-2'>
+                  className='block mt-1 sm:mt-16 px-2 py-1 text-white hover:text-black font-semibold rounded hover:bg-gray-200'>
                   {item.name}
                   {hasChildren && hasChildren}
                 </a>
-                {hasChildren && <div className={openMenus[menuId] ? 'sm:fixed block bg-gray-500 ml-2 p-2' : 'hidden'}>{children}</div>}
+                {hasChildren && <div className={openMenus[menuId] ? 'sm:fixed block bg-gray-500 ml-0 px-1' : 'hidden'}>{children}</div>}
                 
               </div>;
             })}

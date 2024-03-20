@@ -47,12 +47,12 @@ body {
     @apply mb-2;
     @apply text-xl;
     @apply md:text-2xl;
-
   }
 }
 
+
 .arrow {
-  border: solid black;
+  border: solid white;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
