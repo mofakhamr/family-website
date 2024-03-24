@@ -11,7 +11,7 @@ export default function Home() {
               src="/family/eshag-1926.jpg"
               width={400}
               height={200}
-              alt='Portrait of Eshagh Mofakam'
+              alt='Portrait of Eshagh Mofakham'
               className="w-1/2 sm:w-1/4 mx-auto"
 
             />
