@@ -46,7 +46,7 @@ family.map((item: any, i: number) => {
             subtitle: item.subtitle,
             dob: item.dob,
             dod: item.dod,
-
+            generation: item.generation,
         },
         type: 'custom',
     };
@@ -75,6 +75,9 @@ family.map((item: any, i: number) => {
                 sourceHandle = Position.Right;
                 targetHandle = Position.Left;
                 break;
+            default:
+                sourceHandle = Position.Top;
+                targetHandle = Position.Bottom;
         }
 
         const newEdge = {
@@ -98,8 +101,8 @@ family.map((item: any, i: number) => {
     if (currentGeneration > 1) {
         const children: number = item.children || 0;
         children_offset = (children) ? (nodeWidth * children) : children_offset;
-        console.log('------------', node);
-        console.log(item.id + '__nodeWidth * children', nodeWidth * children);
+        // console.log('------------', node);
+        // console.log(item.id + '__nodeWidth * children', nodeWidth * children);
 
     }
 

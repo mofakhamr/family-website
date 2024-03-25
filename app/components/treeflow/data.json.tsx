@@ -152,6 +152,7 @@ const family = [
     },
     
 ];
+//        offset: {x:100, y:100}
 
 // Fourth Generation
 const generation_4: any = [

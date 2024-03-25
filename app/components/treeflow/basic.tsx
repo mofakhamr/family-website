@@ -14,29 +14,28 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-
 const minimapStyle = {
   height: 180,
 };
-console.log(minimapStyle);
 
 export default function App() {
   return (
     <div
-      style={{ width: '90vw', height: '90vh' }}
+      style={{ width: '90vw', height: '80vh' }}
     >
       <ReactFlow
         nodes={initialNodes}
         edges={initialEdges}
-        fitView
         nodeTypes={nodeTypes}
+        // fitView
+        defaultViewport={{x: 0, y: 0, zoom: 0.25 }}
       >
         <Controls />
-        <MiniMap 
-        nodeStrokeWidth={3} 
-        pannable={true}
-        zoomable={true}
-      />
+        <MiniMap
+          nodeStrokeWidth={3}
+          pannable={true}
+          zoomable={true}
+        />
 
       </ReactFlow>
     </div>
