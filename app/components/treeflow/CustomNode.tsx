@@ -5,7 +5,7 @@ import { Handle, Position, NodeProps } from 'reactflow';
 import moduleStyles from './style.module.css';
 
 const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
-  const genClass = "gen" + data.generation; 
+  const genClass = "gen" + data.generation;
   return (
     <div className={`${moduleStyles.node} ${moduleStyles[genClass]}`}>
       <Handle type="target" position={Position.Left} id={Position.Left} />
@@ -27,8 +27,6 @@ const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
       </div>
       <Handle type="source" id={Position.Bottom} position={Position.Bottom} />
       <Handle type="source" id={Position.Right} position={Position.Right} />
-      <div className='text-white hover:text-black text-sm text-right'><strong>X:</strong>{' '}{xPos.toFixed(2)}{' '}<strong>Y:</strong>{' '}{yPos.toFixed(2)}</div>
-
     </div>
   );
 };
