@@ -37,7 +37,7 @@ const TreeConfig: { [key: string]: treeConfigObject } = {
     spouseHandleSource: Position.Bottom,
     spouseHandleTarget: Position.Top,
     nodeWidth: 250,
-    nodeWidthGap: 75,
+    nodeWidthGap: 125,
     nodeHeight: 100,
     nodeHeightGap: 50,
   },
@@ -184,7 +184,7 @@ const initialEdges = allEdges;
 
 // Add a custom node for better handles
 import CustomNode from './CustomNode';
-const nodeTypes = {
+const nodeTypes: any = {
   custom: CustomNode,
 };
 
