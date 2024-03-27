@@ -3,14 +3,14 @@ type familyObject = {
     id: string, // Acts as both the name and the unique ID for relationships
     subtitle: string, // [optional] Used for a persons title
     generation: number, // The family generation, used to set the node Y position
-    dob: string, // [optional] Free text for Date Of Birth 
+    dob: string, // [optional] Free text for Date Of Birth
     dod: string, // [optional] Free text for Date of Death
-    relations: any, // [optional] and array of objects, 
-    children: number, // [optional] Number of children, usually set on wife used to offset Y of the following node 
+    relations: any, // [optional] and array of objects,
+    children: number, // [optional] Number of children, usually set on wife used to offset Y of the following node
 }
 
 // First three generations.
-const family = [
+const generation_1_2 = [
     // 1 First Generation
     {
         id: 'Haj-Mirza-Jabbar TASKEREH-CHI',
@@ -19,7 +19,7 @@ const family = [
         dob: 'Circa 1775',
         relations: [],
         children: 3,
-        offset: { x: 1000, y: 0 }
+        //: { x: 1000, y: 0 }
 
     },
     // 2 Second Generation
@@ -60,7 +60,12 @@ const family = [
         relations: [{ source: 'Hadj Safar Ali KHOII', target: 'Hadj Jabbar Khan', relationship: 'wife' }],
         children: 2,
     },
-    // 3 Thrid Generation
+];
+//        offset: {x:100, y:100}
+
+const generation_3: any = [
+
+    // 3 Third Generation
     {
         id: 'Mirza Abdol Ghani KHOII',
         generation: 3,
@@ -120,9 +125,10 @@ const family = [
         id: 'Moosa SEGHATOL-ESLAM',
         generation: 3,
         relations: [{ source: 'Sakineh Khanoom (Toly)', target: '_self', relationship: 'wife'},],
-        children: 6,
+        children: 7, // hainv seven children fixes it :( when they actually have 6
     },
-    // next son
+    // Something occuring here :( both families end up the same x position
+    // Adding 6 children to Moosa SEGHATOL-ESLAM doesn't push x pos far enough
     {
         id: 'Mirza Javad SEED-ED-DOLEH',
         generation: 3,
@@ -143,16 +149,16 @@ const family = [
         dob: '1864',
         dod: ' - 1926',
         relations: [{ source: 'Hadj Jabbar Khan', target: '_self', relationship: 'son'},],
+        offset: {x: 0, y: 0}
     },
     {
         id: 'Wife of Morteza POORMORTAZAVI',
         generation: 3,
         relations: [{ source: 'Morteza POORMORTAZAVI', target: '_self', relationship: 'wife'},],
         children: 3,
+        offset: {x: 0, y: 0}
     },
-    
 ];
-//        offset: {x:100, y:100}
 
 // Fourth Generation
 const generation_4: any = [
@@ -206,9 +212,10 @@ const generation_4: any = [
 
 ];
 const combined = [
-    ...family,
+    ...generation_1_2,
+    ...generation_3,
     ...generation_4,
 ];
-console.log('combined', combined);
+//console.log('combined', combined);
 
 export const familyData: any = combined;
