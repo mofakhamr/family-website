@@ -75,6 +75,35 @@ let allEdges: Edge[] = [];
 let edgeId: number = 0;
 let children_offset: number = 0;
 
+
+
+
+
+
+/**
+ * HMMM....
+ */
+
+// One option for positioning is to count the children per generation first
+let perGen: {[key:number]: number} = {};
+family.map((item: any, i: number) => {
+  const thisGen = item.children || 0;
+  perGen[item.generation] = perGen[item.generation] || 0;
+  perGen[item.generation] += thisGen;
+});
+console.log(perGen);
+
+
+
+
+
+
+
+
+
+
+
+
 family.map((item: any, i: number) => {
   // If new generation, flag it as such, reset Sibling count and reset the offset.
   if (item.generation > currentGeneration) {
@@ -165,8 +194,13 @@ family.map((item: any, i: number) => {
     const children: number = item.children || 0;
     // Last piece of the puzzle for dynamic vars.. the children offset
     if (children) {
+
       const nodeOffset: number = (currentConfig.name === 'vertical') ? nodeWidth : nodeHeight;
-      children_offset = Math.round(nodeOffset * (children / 2)) + (nodeOffset / 2);
+      // I thought I was centralizing to children but some get hidden.. needs more work.
+      // ESPECIALLY when some children have husbands and many children ....
+      const child_centre = (children * 2);
+      children_offset = Math.round(nodeOffset * child_centre) + (nodeOffset / 2);
+      console.log(`children_offset ${item.id}:`, children_offset);
     }
 
   }

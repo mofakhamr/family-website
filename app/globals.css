@@ -66,8 +66,6 @@ body {
   margin: 3px;
 }
 .adown {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
 }
 .aup {
   transform: rotate(-135deg);

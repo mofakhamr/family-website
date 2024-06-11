@@ -9,6 +9,7 @@ type familyObject = {
     children: number, // [optional] Number of children, usually set on wife used to offset Y of the following node
 }
 
+
 // First three generations.
 const generation_1_2 = [
     // 1 First Generation
@@ -119,13 +120,14 @@ const generation_3: any = [
     {
         id: 'Ali SEGHATOL-ESLAM',
         generation: 3,
-        relations: [{ source: 'Sakineh Khanoom (Toly)', target: '_self', relationship: 'wife - martyred'}],
+        relations: [{ source: 'Sakineh Khanoom (Toly)', target: '_self', relationship: 'wife - martyred' }],
     },
     {
         id: 'Moosa SEGHATOL-ESLAM',
         generation: 3,
-        relations: [{ source: 'Sakineh Khanoom (Toly)', target: '_self', relationship: 'wife'},],
-        children: 7, // hainv seven children fixes it :( when they actually have 6
+        relations: [{ source: 'Sakineh Khanoom (Toly)', target: '_self', relationship: 'wife' },],
+        children: 6, // having seven children fixes it :( when they actually have 6
+        offset: { x: 0, y: 0 }
     },
     // Something occuring here :( both families end up the same x position
     // Adding 6 children to Moosa SEGHATOL-ESLAM doesn't push x pos far enough
@@ -134,13 +136,15 @@ const generation_3: any = [
         generation: 3,
         dob: '1856',
         dod: ' - 1929',
-        relations: [{ source: 'Hadj Jabbar Khan', target: '_self', relationship: 'son'},],
+        relations: [{ source: 'Hadj Jabbar Khan', target: '_self', relationship: 'son' },],
     },
     {
         id: 'Frangiss Khanoom',
         generation: 3,
-        relations: [{ source: 'Mirza Javad SEED-ED-DOLEH', target: '_self', relationship: 'wife'},],
+        relations: [{ source: 'Mirza Javad SEED-ED-DOLEH', target: '_self', relationship: 'wife' },],
         children: 3,
+        offset: { x: 0, y: 0 }
+
     },
     {
         id: 'Morteza POORMORTAZAVI',
@@ -148,20 +152,30 @@ const generation_3: any = [
         generation: 3,
         dob: '1864',
         dod: ' - 1926',
-        relations: [{ source: 'Hadj Jabbar Khan', target: '_self', relationship: 'son'},],
-        offset: {x: 0, y: 0}
+        relations: [{ source: 'Hadj Jabbar Khan', target: '_self', relationship: 'son' },],
+        offset: { x: 0, y: 0 }
     },
     {
         id: 'Wife of Morteza POORMORTAZAVI',
         generation: 3,
-        relations: [{ source: 'Morteza POORMORTAZAVI', target: '_self', relationship: 'wife'},],
+        relations: [{ source: 'Morteza POORMORTAZAVI', target: '_self', relationship: 'wife' },],
         children: 3,
-        offset: {x: 0, y: 0}
+        offset: { x: 0, y: 0 }
     },
 ];
 
-// Fourth Generation
-const generation_4: any = [
+/*
+* My presumption is the first born is on the left and last born on the right?
+* Explanation of "generation_4__1_1":
+*   `generation_4` is the generation
+*   `__` (double underscore) is a separator
+*   `1_1` is child of child, i.e. first child of first child
+*   (or
+*  `1_2` is second child of first child)
+*/
+
+// Fourth Generation - first great grandchilden Mofakhams
+const generation_4__1_1: any = [
     {
         id: 'Esagh MOFAKHAM',
         subtitle: 'Mofakham-ed-Doleh',
@@ -171,10 +185,24 @@ const generation_4: any = [
         relations: [{ source: 'Satereh Khanoom', target: '_self', relationship: 'son' }],
     },
     {
+        id: 'Zahra PEERNIA',
+        subtitle: 'Jalilsaltaneh',
+        generation: 4,
+        dob: '1886',
+        dod: ' - 1969',
+        relations: [{ source: 'Esagh MOFAKHAM', target: '_self', relationship: 'wife' }],
+    },
+    {
         id: 'Hashem MOFAKHAM',
         subtitle: 'Mofakham-el-Soltan',
         generation: 4,
         relations: [{ source: 'Satereh Khanoom', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Wife of Hashem Mofakham',
+        subtitle: 'Died of TB age 31',
+        generation: 4,
+        relations: [{ source: 'Hashem MOFAKHAM', target: '_self', relationship: 'wife' }],
     },
     {
         id: 'Mahmoud MOFAKHAM',
@@ -184,6 +212,16 @@ const generation_4: any = [
         dod: ' - 1943',
         relations: [{ source: 'Satereh Khanoom', target: '_self', relationship: 'son' }],
     },
+    {
+        id: 'Khadijeh Soltan Khanoom',
+        generation: 4,
+        dob: '18??',
+        dod: ' - 1945',
+        relations: [{ source: 'Mahmoud MOFAKHAM', target: '_self', relationship: 'wife' }],
+    },
+];
+// Fourth Generation - second great grandchilden
+const generation_4__1_2: any = [
     {
         id: 'Mirza Hassan-Ali Khan',
         generation: 4,
@@ -209,12 +247,186 @@ const generation_4: any = [
         generation: 4,
         relations: [{ source: 'Khanoom Bozorg', target: '_self', relationship: 'son' }],
     },
+];
+// Fourth Generation - fifth great grandchilden
+const generation_4__1_5: any = [
+    {
+        id: 'Mirza Yahya Khan',
+        generation: 4,
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Mirza Raffi Khan',
+        generation: 4,
+        dob: '1862',
+        dod: ' - 1911',
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Kobra Khanoom',
+        generation: 4,
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'daughter' }],
+    },
+    {
+        id: 'Mohamad GHALEBAGHI',
+        generation: 4,
+        relations: [{ source: 'Kobra Khanoom', target: '_self', relationship: 'husband' }],
+    },
+    {
+        id: 'Rakhshandeh Khanoom',
+        generation: 4,
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Ozra Khanoom',
+        generation: 4,
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'daughter' }],
+    },
+    {
+        id: 'Abbas Gholi RAFII',
+        generation: 4,
+        relations: [{ source: 'Ozra Khanoom', target: '_self', relationship: 'husband' }],
+    },
+    {
+        id: 'Alieh Khanoom',
+        generation: 4,
+        relations: [{ source: 'Moosa SEGHATOL-ESLAM', target: '_self', relationship: 'son' }],
+    },
 
 ];
+// Fourth Generation - sixth great grandchilden
+const generation_4__3_1: any = [
+    {
+        id: 'Baadry',
+        generation: 4,
+        relations: [{ source: 'Frangiss Khanoom', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Nazanin',
+        generation: 4,
+        relations: [{ source: 'Baadry', target: '_self', relationship: 'wife' }],
+    },
+    {
+        id: 'Mehry',
+        generation: 4,
+        relations: [{ source: 'Frangiss Khanoom', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Noosh Afarin',
+        generation: 4,
+        relations: [{ source: 'Mehry', target: '_self', relationship: 'wife' }],
+    },
+    {
+        id: 'Hossain',
+        generation: 4,
+        relations: [{ source: 'Frangiss Khanoom', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Hassan',
+        generation: 4,
+        relations: [{ source: 'Hossain', target: '_self', relationship: 'wife' }],
+    },
+];
+// Fourth Generation - seventh great grandchilden
+const generation_4__3_2: any = [
+    {
+        id: 'First Daughter',
+        generation: 4,
+        relations: [{ source: 'Wife of Morteza POORMORTAZAVI', target: '_self', relationship: 'daughter' }],
+    },
+    {
+        id: 'Parveez MOMTAZ-ol-MOLK',
+        generation: 4,
+        relations: [{ source: 'Wife of Morteza POORMORTAZAVI', target: '_self', relationship: 'daughter' }],
+    },
+    {
+        id: 'Third Daughter',
+        generation: 4,
+        relations: [{ source: 'Wife of Morteza POORMORTAZAVI', target: '_self', relationship: 'daughter' }],
+    },
+
+];
+
+/**
+ * Now we deep dive into the Mofakhams.
+ */
+const generation_5_eshagh: any = [
+    {
+        id: 'Parveez MOFAKHAM',
+        generation: 5,
+        dob: '1907',
+        dod: ' - 1945',
+        relations: [{ source: 'Zahra PEERNIA', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Blanche',
+        generation: 5,
+        dob: '1907',
+        dod: ' - 1945',
+        relations: [{ source: 'Parveez MOFAKHAM', target: '_self', relationship: 'wife' }],
+    },
+    {
+        id: 'Jamsheed MOFAKHAM',
+        generation: 5,
+        dob: '1910',
+        dod: ' - 1984',
+        relations: [{ source: 'Zahra PEERNIA', target: '_self', relationship: 'son' }],
+    },
+    {
+        id: 'Iran Dokht MOFAKHAM',
+        generation: 5,
+        dob: '1909',
+        dod: ' - 1993',
+        relations: [{ source: 'Zahra PEERNIA', target: '_self', relationship: 'daughter' }],
+    },
+    {
+        id: 'Hossain SAHEBJAM',
+        generation: 5,
+        dob: '1885',
+        dod: ' - 1957',
+        relations: [{ source: 'Iran Dokht MOFAKHAM', target: '_self', relationship: 'husband' }],
+    },
+    {
+        id: 'Soryeh Soltan',
+        subtitle: 'Died of TB very young',
+        generation: 5,
+        relations: [{ source: 'Wife of Hashem Mofakham', target: '_self', relationship: 'husband' }],
+    },
+    /// Mofakhams
+    
+    {
+        id: 'Masood MOFAKHAM',
+        subtitle: 'Mofakham-ol-Soltan',
+        generation: 5,
+        dob: '1889',
+        dod: ' - 1953',
+        relations: [{ source: 'Khadijeh Soltan Khanoom', target: '_self', relationship: 'son' }],
+    },
+];
+
+
+
+
+const generation_5_hashem: any = [
+
+];
+const generation_5_mahmoud: any = [
+
+];
+
+
+
 const combined = [
     ...generation_1_2,
     ...generation_3,
-    ...generation_4,
+    ...generation_4__1_1,
+    ...generation_4__1_2,
+    ...generation_4__1_5,
+    ...generation_4__3_1,
+    ...generation_4__3_2,
+    ...generation_5_eshagh,
+
+
 ];
 //console.log('combined', combined);
 
