@@ -393,7 +393,7 @@ const generation_5_eshagh: any = [
         relations: [{ source: 'Wife of Hashem Mofakham', target: '_self', relationship: 'husband' }],
     },
     /// Mofakhams
-    
+
     {
         id: 'Masood MOFAKHAM',
         subtitle: 'Mofakham-ol-Soltan',
