@@ -14,7 +14,7 @@ import { Suspense } from 'react';
 import GoogleAnalytics from '@/components/ga';
 
 export const metadata: Metadata = {
-  title: {  
+  title: {
     template: '%s | Mofakham Family Website',
     default: "Mofakham Family Website",
   },
@@ -57,6 +57,9 @@ export default function RootLayout({
               `,
             }}
           />
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png"></link>
+          <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png"></link>
+          <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png"></link>
       </head>
       <body className={inter.className}>
       <Header />
@@ -65,7 +68,7 @@ export default function RootLayout({
         {/* Layout UI */}
         {children}
         {/*  strategy="afterInteractive"  */}
-        
+
         <div className="bg-gray-500 left-0 flex h-24 w-full items-end justify-center ">
           &nbsp;
         </div>
